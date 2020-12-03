@@ -3,6 +3,9 @@ package com.syntax.class02;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+import java.time.Month;
 
 public class Homework02 {
     public static void main(String[] args) throws InterruptedException {
@@ -18,8 +21,13 @@ public class Homework02 {
         driver.get("https://www.facebook.com/");
         driver.findElement(By.id("u_0_2")).click();
         Thread.sleep(1000);
-        driver.findElement(By.name("firstname")).sendKeys(firstName);
-        driver.findElement(By.name("lastname")).sendKeys(lastName);
+        //driver.findElement(By.name("firstname")).sendKeys(firstName);
+        driver.findElement(By.id("u_1_b")).sendKeys(firstName);
+
+        //driver.findElement(By.name("lastname")).sendKeys(lastName);
+        driver.findElement(By.name("sex")).click();
+        driver.findElement(By.id("month")).click();
+        driver.findElement(By.id("u_1_d")).sendKeys(lastName);
         driver.findElement(By.name("reg_email__")).sendKeys(mobileNUmber);
         driver.findElement(By.name("reg_passwd__")).sendKeys(password);
         driver.findElement(By.name("websubmit")).click();
